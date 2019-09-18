@@ -10,7 +10,7 @@ defmodule Mix.Tasks.Appsignal.Demo do
     Appsignal.Demo.create_transaction_performance_request()
     Appsignal.Demo.create_transaction_error_request()
     Appsignal.increment_counter("demo_end")
-    Appsignal.stop(nil)
+    Application.stop(:appsignal)
     Logger.info("Demonstration sample data sent!")
 
     Logger.info(
